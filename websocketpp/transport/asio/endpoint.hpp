@@ -110,6 +110,7 @@ public:
         m_resolver.reset();
         m_work.reset();
         if (m_state != UNINITIALIZED && !m_external_io_service) {
+            m_io_service->stop();
             delete m_io_service;
         }
     }
